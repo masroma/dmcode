@@ -22,10 +22,9 @@
                 <h1 class="text-white font-bold lg:text-xl mb-2 lg:mb-3">
                     Informasi UMUM
                 </h1>
-                <router-link :to="{ name: 'home' }" class="text-white text-sm lg:text-base">Informasi Donasi
+                <router-link :to="{ name: 'laporandonasi' }" class="text-white text-sm lg:text-base">Informasi Donasi
                     Infaq</router-link>
-                <router-link :to="{ name: 'home' }" class="text-white text-sm lg:text-base">Laporan Donasi
-                    Infaq</router-link>
+               
             </div>
 
             <div class="flex flex-col">

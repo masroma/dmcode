@@ -50,6 +50,23 @@ const routes = [
         component: () => import( /* webpackChunkName: "login" */ '../views/Konsepbelajar.vue')
     },
 
+    {
+        path: '/lupa-password',
+        name: 'lupapassword',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Lupapassword.vue')
+    },
+
+    {
+        path: '/laporan-donasi',
+        name: 'laporandonasi',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Laporandonasi.vue')
+    },
+    {
+        path: '/biaya',
+        name: 'biaya',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Biaya.vue')
+    },
+
 ]
 
 //create router

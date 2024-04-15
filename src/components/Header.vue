@@ -7,6 +7,7 @@
             </router-link>
 
             <router-link :to="{ name: 'tentangkami' }" class="hidden lg:flex lg:items-center">Tentang kami</router-link>
+            <router-link :to="{ name: 'biaya' }" class="hidden lg:flex lg:items-center">Biaya Kursus</router-link>
             <router-link :to="{ name: 'roadmap' }" class="hidden lg:flex lg:items-center">Roadmap</router-link>
             <router-link :to="{ name: 'konsepbelajar' }" class="hidden lg:flex lg:items-center">Konsep
                 belajar</router-link>
@@ -38,9 +39,9 @@
                 </button>
             </div>
             <div class="hidden lg:flex item-center gap-x-2">
-                <button class="bg-cyan-600 py-3 px-5 rounded-lg text-white font-semibold">Masuk</button>
-                <button
-                    class="bg-white border-2 border-cyan-600 py-3 px-5 rounded-lg text-cyan-600 font-semibold">Daftar</button>
+                <router-link :to="{name:'login'}" class="bg-cyan-600 py-3 px-5 rounded-lg text-white font-semibold text-center">Masuk</router-link>
+                <router-link :to="{name:'register'}"
+                    class="bg-white border-2 border-cyan-600 py-3 px-5 rounded-lg text-cyan-600 font-semibold text-center">Daftar</router-link>
             </div>
         </div>
     </div>
@@ -51,8 +52,8 @@
         <!-- Sidebar content -->
         <div class="bg-cyan-800  h-screen w-full px-2 py-3">
             <div class="flex flex-col my-5 gap-y-3">
-                <button class="bg-white text-cyan-600 font-semibold py-3 rounded-md">Masuk</button>
-                <button class="bg-cyan-600 text-white font-semibold py-3 rounded-md">Daftar</button>
+                <router-link :to="{name:'login'}" class="bg-white text-cyan-600 font-semibold py-3 rounded-md text-center">Masuk</router-link>
+                <router-link :to="{name:'register'}" class="bg-cyan-600 text-white font-semibold py-3 rounded-md text-center">Daftar</router-link>
             </div>
             <div class="flex bg-gray-50 items-center px-2">
                 <input type="text" class="bg-gray-50 py-3 px-2 flex-1 focus:outline-none" placeholder="cari kursus">
@@ -64,6 +65,7 @@
 
             <div class="flex flex-col gap-y-2 my-5">
                 <router-link :to="{name:'tentangkami'}" class="text-white text-base ">Tentang Kami</router-link>
+                <router-link :to="{name:'biaya'}" class="text-white text-base ">Biaya Kursus</router-link>
                 <router-link :to="{name:'roadmap'}" class="text-white text-base ">Roadmap Belajar</router-link>
                 <router-link :to="{name:'konsepbelajar'}" class="text-white text-base ">Konsep Belajar</router-link>
             </div>

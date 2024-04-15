@@ -2,13 +2,13 @@
   <div>
     
     <!-- Header -->
-    <Header />
+    <Header v-if="this.$route.name != 'login' && this.$route.name != 'register' && this.$route.name != 'lupapassword'" />
 
     <!-- content -->
     <router-view></router-view>
 
     <!-- footer -->
-    <Footer />
+    <Footer v-if="this.$route.name != 'login' && this.$route.name != 'register' && this.$route.name != 'lupapassword'" />
 
   </div>
 </template>
