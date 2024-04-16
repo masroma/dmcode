@@ -66,6 +66,28 @@ const routes = [
         name: 'biaya',
         component: () => import( /* webpackChunkName: "login" */ '../views/Biaya.vue')
     },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Dashboard.vue')
+    },
+    {
+        path: '/kursus',
+        name: 'kursus',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Kursussaya.vue')
+    },
+
+    {
+        path: '/sertifikat',
+        name: 'sertifikat',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Sertifikat.vue')
+    },
+
+    {
+        path: '/konsultasi',
+        name: 'konsultasi',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Jadwalkonsultasi.vue')
+    },
 
 ]
 

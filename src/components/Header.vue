@@ -39,8 +39,9 @@
                 </button>
             </div>
             <div class="hidden lg:flex item-center gap-x-2">
-                <router-link :to="{name:'login'}" class="bg-cyan-600 py-3 px-5 rounded-lg text-white font-semibold text-center">Masuk</router-link>
-                <router-link :to="{name:'register'}"
+                <router-link :to="{ name: 'dashboard' }"
+                    class="bg-cyan-600 py-3 px-5 rounded-lg text-white font-semibold text-center">Masuk</router-link>
+                <router-link :to="{ name: 'register' }"
                     class="bg-white border-2 border-cyan-600 py-3 px-5 rounded-lg text-cyan-600 font-semibold text-center">Daftar</router-link>
             </div>
         </div>
@@ -52,22 +53,27 @@
         <!-- Sidebar content -->
         <div class="bg-cyan-800  h-screen w-full px-2 py-3">
             <div class="flex flex-col my-5 gap-y-3">
-                <router-link :to="{name:'login'}" class="bg-white text-cyan-600 font-semibold py-3 rounded-md text-center">Masuk</router-link>
-                <router-link :to="{name:'register'}" class="bg-cyan-600 text-white font-semibold py-3 rounded-md text-center">Daftar</router-link>
+                <router-link :to="{ name: 'login' }"
+                    class="bg-white text-cyan-600 font-semibold py-3 rounded-md text-center">Masuk</router-link>
+                <router-link :to="{ name: 'register' }"
+                    class="bg-cyan-600 text-white font-semibold py-3 rounded-md text-center">Daftar</router-link>
             </div>
             <div class="flex bg-gray-50 items-center px-2">
                 <input type="text" class="bg-gray-50 py-3 px-2 flex-1 focus:outline-none" placeholder="cari kursus">
-               <button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/></svg>
-               </button>
-                
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314" />
+                    </svg>
+                </button>
+
             </div>
 
             <div class="flex flex-col gap-y-2 my-5">
-                <router-link :to="{name:'tentangkami'}" class="text-white text-base ">Tentang Kami</router-link>
-                <router-link :to="{name:'biaya'}" class="text-white text-base ">Biaya Kursus</router-link>
-                <router-link :to="{name:'roadmap'}" class="text-white text-base ">Roadmap Belajar</router-link>
-                <router-link :to="{name:'konsepbelajar'}" class="text-white text-base ">Konsep Belajar</router-link>
+                <router-link :to="{ name: 'tentangkami' }" class="text-white text-base ">Tentang Kami</router-link>
+                <router-link :to="{ name: 'biaya' }" class="text-white text-base ">Biaya Kursus</router-link>
+                <router-link :to="{ name: 'roadmap' }" class="text-white text-base ">Roadmap Belajar</router-link>
+                <router-link :to="{ name: 'konsepbelajar' }" class="text-white text-base ">Konsep Belajar</router-link>
             </div>
         </div>
     </div>
@@ -80,24 +86,24 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 export default {
-  setup() {
-    const sidebarOpen = ref(false);
-    const router = useRouter();
+    setup() {
+        const sidebarOpen = ref(false);
+        const router = useRouter();
 
-    const toggleSidebar = () => {
-      sidebarOpen.value = !sidebarOpen.value;
-    };
+        const toggleSidebar = () => {
+            sidebarOpen.value = !sidebarOpen.value;
+        };
 
-    // Tutup sidebar saat pindah halaman
-    router.beforeEach((to, from, next) => {
-      sidebarOpen.value = false;
-      next();
-    });
+        // Tutup sidebar saat pindah halaman
+        router.beforeEach((to, from, next) => {
+            sidebarOpen.value = false;
+            next();
+        });
 
-    return {
-      sidebarOpen,
-      toggleSidebar
-    };
-  }
+        return {
+            sidebarOpen,
+            toggleSidebar
+        };
+    }
 };
 </script>
