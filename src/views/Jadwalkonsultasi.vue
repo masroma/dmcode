@@ -24,6 +24,9 @@
                         </svg>
                         <router-link class="text-sm text-cyan-600" :to="{ name: 'konsultasi' }">Jadwal
                             Konsultasi</router-link>
+                        <form action="">
+
+                        </form>
 
                     </div>
                 </div>
@@ -135,6 +138,27 @@
                     <div class="col-span-3"> <!-- Kolom 2 dengan lebar 2 kolom -->
                         <div class="bg-white shadow lg p-4 my-3">
                             <h2 class="font-bold text-cyan-600">Form Pengajuan Konsutasi</h2>
+                            <form class="py-5">
+                                <div class="flex flex-col gap-y-2 mb-5">
+                                    <p class="text-cyan-600">
+                                        Tanggal Konsultasi
+                                    </p>
+                                    <div class="border-2 border-cyan-600 rounded-lg">
+                                        <input type="date"
+                                            class="w-full py-3 px-3 rounded-lg focus:outline-none bg-gray-100"
+                                            placeholder="Tanggal ">
+                                        <div class="p-3 flex-items-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button class="bg-cyan-600 p-3 text-white font-semibold rounded-lg">
+                                    <p v-if="!loading" class="font-semibold text-white ">Kirim password</p>
+                                    <p v-else class="font-semibold text-white ">Loading ...</p>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

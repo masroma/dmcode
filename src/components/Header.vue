@@ -53,7 +53,7 @@
         <!-- Sidebar content -->
         <div class="bg-cyan-800  h-screen w-full px-2 py-3">
             <div class="flex flex-col my-5 gap-y-3">
-                <router-link :to="{ name: 'login' }"
+                <router-link :to="{ name: 'dashboard' }"
                     class="bg-white text-cyan-600 font-semibold py-3 rounded-md text-center">Masuk</router-link>
                 <router-link :to="{ name: 'register' }"
                     class="bg-cyan-600 text-white font-semibold py-3 rounded-md text-center">Daftar</router-link>
