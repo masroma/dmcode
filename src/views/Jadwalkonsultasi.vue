@@ -11,7 +11,7 @@
             <main class="p-6 ml-64 mt-20">
                 <Account />
                 <div class="my-5">
-                    <h2 class="text-xl font-bold text-cyan-600 capitalize">Sertikat</h2>
+                    <h2 class="text-xl font-bold text-cyan-600 capitalize">Jadwal Konsultasi</h2>
                     <div class="flex items-center gap-x-2">
                         <router-link class="text-sm text-cyan-600" :to="{ name: 'dashboard' }">Dashboard</router-link>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
@@ -145,17 +145,43 @@
                                     </p>
                                     <div class="border-2 border-cyan-600 rounded-lg">
                                         <input type="date"
-                                            class="w-full py-3 px-3 rounded-lg focus:outline-none bg-gray-100"
+                                            class="w-full py-3 px-3 rounded-lg focus:outline-none bg-white"
                                             placeholder="Tanggal ">
-                                        <div class="p-3 flex-items-center">
 
-                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-y-2 mb-5">
+                                    <p class="text-cyan-600">
+                                        Waktu Konsultasi
+                                    </p>
+                                    <div class="border-2 border-cyan-600 rounded-lg">
+
+                                        <select name="" class="w-full py-3 px-3 rounded-lg focus:outline-none bg-white"
+                                            id="">
+                                            <option value="">Pilih Waktu</option>
+                                            <option value="">Pagi 06.00</option>
+                                            <option value="">Malam 19.00</option>
+                                            <option value="">Malam 20.00</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-y-2 mb-5">
+                                    <p class="text-cyan-600">
+                                        Jelaskan Problem Kamu, atau tujuan konsultasi
+                                    </p>
+                                    <div class="border-2 border-cyan-600 rounded-lg">
+                                        <textarea name="" id=""
+                                            class="w-full py-3 px-3 rounded-lg focus:outline-none bg-white"></textarea>
+
                                     </div>
                                 </div>
 
 
-                                <button class="bg-cyan-600 p-3 text-white font-semibold rounded-lg">
-                                    <p v-if="!loading" class="font-semibold text-white ">Kirim password</p>
+                                <button class="w-full bg-cyan-600 p-3 text-white font-semibold rounded-lg">
+                                    <p v-if="!loading" class="font-semibold text-white ">Ajukan konsultasi</p>
                                     <p v-else class="font-semibold text-white ">Loading ...</p>
                                 </button>
                             </form>

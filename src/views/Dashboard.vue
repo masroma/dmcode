@@ -25,8 +25,8 @@
                             </div>
                         </div>
                         <div class="flex justify-between items-center">
-                            <p class="text-gray-500">6 Materi</p>
-                            <p class="text-gray-500">2 Intruktur</p>
+                            <p class="text-gray-500 text-sm">6 Materi</p>
+                            <p class="text-gray-500 text-sm">2 Intruktur</p>
                         </div>
 
                     </div>
@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         <div class="flex justify-between items-center">
-                            <p class="text-gray-500">1 Materi</p>
-                            <p class="text-gray-500">dari 6 Materi</p>
+                            <p class="text-gray-500 text-sm">1 Materi</p>
+                            <p class="text-gray-500 text-sm">dari 6 Materi</p>
                         </div>
 
                     </div>
@@ -61,8 +61,8 @@
                             </div>
                         </div>
                         <div class="flex justify-between items-center">
-                            <p class="text-gray-500">2 Tugas</p>
-                            <p class="text-gray-500">dari 34 Tugas</p>
+                            <p class="text-gray-500 text-sm">2 Tugas</p>
+                            <p class="text-gray-500 text-sm">dari 34 Tugas</p>
                         </div>
 
                     </div>
@@ -74,39 +74,40 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 my-5">
                         <div class="bg-white rounded-lg shadow-lg px-4 py-5">
                             <h2 class="text-xl font-semibold mb-2 text-cyan-600">List Nilai</h2>
-                            <table
-                                class="w-full whitespace-nowrap bg-white divide-y divide-gray-200 rounded-lg overflow-hidden">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Nama Tugas
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Ket Instruktur
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Nilai
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Tugas 1</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">Terlalu lama dalam memecahkan
-                                                masalah</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm text-gray-900">65</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="overflow-x-auto my-5">
+                                <table class="table-auto min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Nama Tugas</th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Keterangan</th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Nilai</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <!-- Your data goes here -->
+                                        <tr>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">Tugas 1</td>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">Deskripsi
+                                                Tugas 1</td>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">90</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">Tugas 2</td>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">Deskripsi
+                                                Tugas 2</td>
+                                            <td class="px-6 py-4 text-xs text-gray-500 whitespace-nowrap">85</td>
+                                        </tr>
+                                        <!-- More rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+
 
                         </div>
 
@@ -126,10 +127,10 @@
                                         <div class="order-1 bg-cyan-600 rounded-lg shadow-xl w-5/12 px-6 py-4">
                                             <h3 class="mb-3 font-bold text-white">HTML CSS</h3>
                                             <div class="flex justify-between">
-                                                <p class="text-white text-sm">
+                                                <p class="text-white text-xs">
                                                     24 Materi
                                                 </p>
-                                                <p class="text-white text-sm">
+                                                <p class="text-white text-xs">
                                                     3 Tugas
                                                 </p>
                                             </div>
@@ -146,7 +147,7 @@
                                         <div
                                             class="order-1 bg-white border-2 border-cyan-600 rounded-lg shadow-xl w-5/12 px-6 py-4">
                                             <h3 class="mb-3 font-bold text-cyan-600">JavaScript</h3>
-                                            <p class="text-sm leading-snug tracking-wide text-cyan-600">Memahami
+                                            <p class="text-xs leading-snug tracking-wide text-cyan-600">Memahami
                                                 JavaScript untuk membuat interaksi dinamis pada website.</p>
                                         </div>
                                     </div>
