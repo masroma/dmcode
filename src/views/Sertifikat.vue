@@ -27,18 +27,18 @@
                     </div>
                 </div>
                 <!-- Card List Kursus -->
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-5">
+                <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 my-5">
                     <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
                         <img src="/banner.png" class="w-100 rounded-t-lg">
                         <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
 
                             <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p class="text-cyan-600">Complete</p>
+                                <p class="text-xs text-cyan-600">Complete</p>
                                 <div class="flex gap-x-1 bg-cyan-600 items-center px-2 py-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
                                         <path fill="white" d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z" />
                                     </svg>
-                                    <p class="text-base font-semibold text-white">Download</p>
+                                    <p class="text-xs font-semibold text-white">Download</p>
                                 </div>
                             </div>
                         </div>

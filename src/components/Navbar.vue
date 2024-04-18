@@ -1,8 +1,8 @@
 <template>
     <header class="ml-64 bg-white shadow-md p-4 items-center w-screen fixed top-0 z-50">
-        <div class="flex items-center bg-gray-100  w-1/2 rounded-lg">
+        <div class="flex items-center bg-gray-100  w-1/2 rounded-lg focus:outline-none">
             <input type="text" placeholder="cari kursus kamu disini"
-                class="px-3 py-3 flex-1 bg-gray-100 focus:outline-none">
+                class="px-3 py-3 flex-1 bg-gray-100 rounded-s-lg focus:outline-none">
             <button
                 class="bg-cyan-600 py-3 px-3  text-white font-semibold border-[1px] rounded-r-lg border-cyan-600"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

@@ -28,83 +28,19 @@
                 </div>
                 <!-- Card List Kursus -->
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-5">
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
+                    <router-link :to="{ name: 'listmateri', params: { slug: 'your_param_value' } }" v-for="index in 20"
+                        :key="index" class="bg-white shadow-lg rounded-lg hover:shadow-xl">
                         <img src="/banner.png" class="w-100 rounded-t-lg">
                         <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
+                            <p class="text-xs text-gray-500">Instruktur Mas Cherry </p>
+                            <h1 class="lg:text-base font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
                             <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
                                 <p>Level Pemula</p>
                                 <p>34 Materi</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg hover:shadow-xl">
-                        <img src="/banner.png" class="w-100 rounded-t-lg">
-                        <div class="p-5 flex flex-col gap-y-2 lg:gap-y-3">
-                            <p class="text-xs lg:text-sm text-gray-500">Instruktur Mas Cherry </p>
-                            <h1 class="lg:text-xl font-bold">PHP BASIC ( CRUD Data & logic auth )</h1>
-                            <div class="flex text-gray-500 text-xs lg:text-sm items-center justify-between">
-                                <p>Level Pemula</p>
-                                <p>34 Materi</p>
-                            </div>
-                        </div>
-                    </div>
+                    </router-link>
+
                 </div>
 
             </main>

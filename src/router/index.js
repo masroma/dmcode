@@ -89,6 +89,12 @@ const routes = [
         component: () => import( /* webpackChunkName: "login" */ '../views/Jadwalkonsultasi.vue')
     },
 
+    {
+        path: '/list-materi/:slug',
+        name: 'listmateri',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Listmateri.vue')
+    },
+
 ]
 
 //create router
