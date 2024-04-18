@@ -83,17 +83,14 @@
                 </div>
 
                 <div class="bg-white shadow-lg p-5 w-full" v-if="tabactive == 'assets'">
-                    <h2 class="text-xl font-semibold">
+                    <h2 class="text-xl font-semibold capitalize">
                         assets
                     </h2>
-                    <p class="text-sm my-2">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae nemo sequi
-                        iusto pariatur amet
-                        consectetur corrupti consequatur accusantium eligendi illo, quibusdam possimus esse veniam
-                        nihil
-                        ea
-                        explicabo a libero quo?
-                    </p>
+                    <div v-for="index in 3" :key="index" class="flex bg-cyan-100 px-3 py-3 justify-between my-5">
+                        <p class="text-cyan-600 font-semibold">Resource code </p>
+                        <button
+                            class="bg-cyan-600 text-white px-3 py-1 flex items-center rounded-lg text-xs">Download</button>
+                    </div>
 
                 </div>
 
