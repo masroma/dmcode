@@ -102,7 +102,8 @@
                         <div class="flex flex-col gap-y-5 my-5">
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm text-cyan-600 font-semibold">Pertanyaan </p>
-                                <textarea class="bg-gray-50 w-full rounded-lg border-2 border-gray-100 p-2"
+                                <textarea
+                                    class="bg-gray-50 w-full rounded-lg border-2 border-gray-100 p-2 text-xs text-gray-500 focus:outline-none"
                                     placeholder="Tuliskan Problem Kalian "></textarea>
                             </div>
                             <div class="flex flex-col gap-y-2">
@@ -112,7 +113,8 @@
 
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-sm text-cyan-600 font-semibold">Tautan link</p>
-                                <input type="text" class="bg-gray-50 w-full rounded-lg border-2 border-gray-100 p-2"
+                                <input type="text"
+                                    class="bg-gray-50 w-full rounded-lg border-2 border-gray-100 p-2 text-xs text-gray-500 focus:outline-none"
                                     placeholder="Tautan link kode">
                             </div>
 
@@ -159,6 +161,8 @@
                                     assumenda quae
                                     animi. Excepturi totam labore reiciendis porro nemo sequi! A, perspiciatis! Corrupti
                                     soluta, quasi dicta dignissimos quod reiciendis similique odio.</p>
+
+                                <p class="hover:cursor-pointer text-cyan-600 text-sm font-semib">Balas</p>
                             </div>
 
                             <div class="ms-5 bg-gray-100 p-3 rounded-lg">

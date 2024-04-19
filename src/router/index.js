@@ -95,6 +95,18 @@ const routes = [
         component: () => import( /* webpackChunkName: "login" */ '../views/Listmateri.vue')
     },
 
+    {
+        path: '/profile',
+        name: 'profile',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Profile.vue')
+    },
+
+    {
+        path: '/password',
+        name: 'password',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Password.vue')
+    },
+
 ]
 
 //create router
