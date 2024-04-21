@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import PrimeVue from 'primevue/config';
 import App from './App.vue'
 
 import './style.css'
@@ -10,5 +11,6 @@ const app = createApp(App)
 //define mixins for global function
 app.mixin(mixins)
 app.use(router)
+app.use(PrimeVue);
 
 app.mount('#app')

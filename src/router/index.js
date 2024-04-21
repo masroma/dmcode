@@ -78,6 +78,13 @@ const routes = [
     },
 
     {
+        path: '/kursus/add',
+        name: 'add-kursus',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Kursus/Add.vue')
+    },
+
+
+    {
         path: '/sertifikat',
         name: 'sertifikat',
         component: () => import( /* webpackChunkName: "login" */ '../views/Sertifikat.vue')
@@ -93,6 +100,12 @@ const routes = [
         path: '/list-materi/:slug',
         name: 'listmateri',
         component: () => import( /* webpackChunkName: "login" */ '../views/Listmateri.vue')
+    },
+
+    {
+        path: '/materi/edit/:slug',
+        name: 'editmateri',
+        component: () => import( /* webpackChunkName: "login" */ '../views/Kursus/Materi.vue')
     },
 
     {
