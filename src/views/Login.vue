@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full justify-center h-screen bg-cyan-100 items-center mx-auto  py-20  px-2">
+    <div class="w-full justify-center h-full bg-cyan-100 items-center mx-auto  py-20  px-2">
         <div class="max-w-xl mx-auto">
             <div class="bg-white p-5 shadow-lg rounded-lg flex flex-col">
                 <div class="flex flex-col justify-center items-center">
@@ -7,16 +7,19 @@
                     <p class="text-cyan-600 text-center font-semibold">
                         Lanjutkan belajar kamu, dan jadilah developer web yang hebat!
                     </p>
+                    <div v-if="message" class="bg-cyan-100 w-full py-2 text-center my-3 text-cyan-700">{{ message }}
+                    </div>
+
                 </div>
 
-                <form action="" class="my-5 flex flex-col gap-y-5">
+                <form @submit.prevent="login" class="my-5 flex flex-col gap-y-5">
                     <div class="flex flex-col gap-y-2">
                         <p class="text-cyan-600">
                             Email
                         </p>
                         <div class="flex border-2 border-cyan-600 rounded-lg">
-                            <input type="text" class="flex-1 py-3 px-3 rounded-lg focus:outline-none"
-                                placeholder="email">
+                            <input v-model="user.email" type="text"
+                                class="flex-1 py-3 px-3 rounded-lg focus:outline-none" placeholder="email">
                             <div class="p-3 flex-items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="#00a3af"
@@ -24,13 +27,15 @@
                                 </svg>
                             </div>
                         </div>
+                        <p v-if="validation.error && validation.error.email" class="text-[11px] text-red-500 text-sm">
+                            {{ validation.error.email[0] }}</p>
                     </div>
                     <div class="flex flex-col gap-y-2">
                         <p class="text-cyan-600">
                             Password
                         </p>
                         <div class="flex  border-2 border-cyan-600 rounded-lg">
-                            <input v-model="user.password" :type="showPassword ? 'text' : 'password'"
+                            <input v-model="user.password" :type="showPassword ? 'text' : 'password'" \
                                 class="flex-1 focus:outline-none py-3 px-3 rounded-lg" placeholder="password">
                             <span class="p-3 flex-items-center" @click="togglePasswordVisibility" v-if="!showPassword">
 
@@ -48,6 +53,9 @@
                             </span>
 
                         </div>
+                        <p v-if="validation.error && validation.error.password"
+                            class="text-[11px] text-red-500 text-sm">
+                            {{ validation.error.password[0] }}</p>
                     </div>
 
                     <button class="bg-cyan-600 p-3 text-white font-semibold rounded-lg">
@@ -100,7 +108,10 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter, useRoute } from 'vue-router'
+import { useToast } from "vue-toastification"
 
 export default {
 
@@ -111,6 +122,14 @@ export default {
         const password = ref('');
         const showPassword = ref(false);
         const loading = ref(false);
+        const message = ref('');
+        const route = useRoute();
+
+        const store = useStore()
+
+        //route
+        const router = useRouter()
+
 
         // Methods
         const togglePasswordVisibility = () => {
@@ -126,6 +145,55 @@ export default {
 
         //validation state
         const validation = ref([])
+        const toast = useToast()
+        //method login
+        function login() {
+
+            loading.value = true;
+            //define variable 
+            let email = user.email
+            let password = user.password
+
+
+
+            //panggil action "login" dari module "auth" di vuex
+            store.dispatch('auth/login', {
+                email,
+                password
+            })
+                .then(() => {
+                    //redirect ke dashboard
+                    router.push({ name: 'dashboard' })
+                    toast.success("Login Berhasil!")
+                }).catch(error => {
+
+                    //assign validaation message
+                    loading.value = false;
+                    validation.value = error
+                    // console.log("ero",error.message)
+
+                    if (validation.value.message) {
+                        toast.error(`${validation.value.message}`)
+                    }
+
+                }).finally(() => {
+                    // Set loading to false setelah proses login selesai
+                    loading.value = false;
+                });
+        }
+
+        onMounted(() => {
+            if (store.getters['auth/isLoggedIn']) {
+                router.push({ name: 'dashboard' })
+            }
+
+            const params = new URLSearchParams(route.fullPath);
+            console.log('params', params.get('/login?message'))
+            if (params.get('/login?message')) {
+                message.value = params.get('/login?message');
+            }
+
+        })
 
 
 
@@ -134,14 +202,14 @@ export default {
 
         //return object
         return {
-
+            message,
             password,
             showPassword,
             togglePasswordVisibility,
-
+            toast,
             user,
             validation,
-
+            login,
             loading
         }
 

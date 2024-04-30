@@ -1,13 +1,59 @@
 <template>
-    <div class="flex items-center gap-x-5">
-        <img src="https://via.placeholder.com/100x100" class="h-16 w-16 rounded-full">
-        <div class="flex flex-col gap-y-2 my-5">
+    <div class="flex items-center gap-x-2">
+        <img src="https://via.placeholder.com/50x50" class="h-12 w-12 rounded-full">
+        <div class="flex flex-col ">
 
-            <h2 class="text-xl font-bold text-cyan-600 capitalize">Selamat datang romadhon</h2>
+            <h2 class="text-md font-bold text-cyan-600 capitalize">{{ user.name }}</h2>
 
-            <div class="bg-cyan-100 px-3 py-1 rounded-md text-cyan-600 w-max text-sm font-semibold">Paket
-                Premium
+            <div class=" text-cyan-600 w-max text-xs font-semibold">{{ user.email }}
             </div>
         </div>
     </div>
 </template>
+
+
+<script>
+
+//hook vuex
+import { useStore } from 'vuex'
+
+//hook vue router
+import { useRouter } from 'vue-router'
+
+//hook vue
+import { computed, onMounted } from 'vue'
+
+
+
+export default {
+
+    name: 'DashboardComponent',
+
+    setup() {
+
+        //store vuex
+        const store = useStore()
+        //mounted
+        onMounted(() => {
+            //panggil action "getUser" dari module "auth" vuex
+            store.dispatch('auth/getUser')
+
+        })
+
+        //data user login
+        const user = computed(() => {
+            return store.state.auth.user
+        })
+
+
+        return {    // <-- method logout
+            user,       // <-- state user
+        }
+
+    }
+}
+</script>
+
+<style></style>
+
+<style></style>

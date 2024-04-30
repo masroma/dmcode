@@ -9,7 +9,7 @@
             <Navbar />
             <!-- Content -->
             <main class="p-6 ml-64 mt-20">
-                <Account />
+
                 <div class="my-5">
                     <h2 class="text-xl font-bold text-cyan-600 capitalize">Sertikat</h2>
                     <div class="flex items-center gap-x-2">
@@ -55,13 +55,11 @@
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import Navbar from '../components/Navbar.vue'
-import Account from '../components/Account.vue';
 export default {
     name: 'DashboardComponent',
     components: {
         Sidebar,
-        Navbar,
-        Account
+        Navbar
     }
 }
 </script>

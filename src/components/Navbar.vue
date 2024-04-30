@@ -1,5 +1,6 @@
 <template>
-    <header class="ml-64 bg-white shadow-md p-4 items-center w-screen fixed top-0 z-50">
+    <header class="ml-64 flex gap-x-32 bg-white shadow-md p-4 items-center w-screen fixed top-0 z-50">
+        <Account />
         <div class="flex items-center bg-gray-100  w-1/2 rounded-lg focus:outline-none">
             <input type="text" placeholder="cari kursus kamu disini"
                 class="px-3 py-3 flex-1 bg-gray-100 rounded-s-lg focus:outline-none">
@@ -17,3 +18,16 @@
     </header>
 
 </template>
+
+<script>
+import Account from '../components/Account.vue';
+
+export default {
+    name: 'NavbarComponent',
+    components: {
+
+        Account
+    }
+}
+
+</script>

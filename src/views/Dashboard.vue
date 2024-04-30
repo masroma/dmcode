@@ -10,7 +10,7 @@
             <!-- Content -->
             <main class="p-6 ml-64 mt-20">
 
-                <Account />
+
                 <!-- Card List Kursus -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
                     <div class="bg-white rounded-lg shadow-lg p-4">
@@ -174,13 +174,13 @@
 <script>
 import Sidebar from '../components/Sidebar.vue'
 import Navbar from '../components/Navbar.vue'
-import Account from '../components/Account.vue';
+
 export default {
     name: 'DashboardComponent',
     components: {
         Sidebar,
         Navbar,
-        Account
+
     }
 }
 </script>

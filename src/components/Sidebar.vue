@@ -55,13 +55,77 @@
                                 d="M3 6V3.5a3.5 3.5 0 1 1 7 0V6h1.5A1.5 1.5 0 0 1 13 7.5v.55a2.5 2.5 0 0 1 0 4.9v.55a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 0 13.5v-6A1.5 1.5 0 0 1 1.5 6zm1-2.5a2.5 2.5 0 0 1 5 0V6H4zM8.5 9a1.5 1.5 0 1 0 0 3h4a1.5 1.5 0 0 0 0-3z"
                                 clip-rule="evenodd" />
                         </svg> Ganti Password</router-link></li>
-                <li><router-link :to="{ name: 'home' }"
+                <li><a @click="logout" style="cursor:pointer"
                         class="block py-2 px-2 flex items-center gap-x-2 rounded hover:bg-cyan-800"><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="white"
                                 d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z" />
-                        </svg> Keluar</router-link></li>
+                        </svg> Keluar</a></li>
             </ul>
         </div>
     </aside>
 </template>
+
+
+<script>
+
+//hook vuex
+import { useStore } from 'vuex'
+
+//hook vue router
+import { useRouter } from 'vue-router'
+
+//hook vue
+import { computed, onMounted } from 'vue'
+
+//hook Toast
+import { useToast } from "vue-toastification"
+
+export default {
+
+    name: 'DashboardComponent',
+
+    setup() {
+
+        //store vuex
+        const store = useStore()
+
+        //vue router
+        const router = useRouter()
+
+        // Same interface as this.$toast
+        const toast = useToast()
+
+        //mounted
+
+
+        //method logout
+        function logout() {
+
+            //panggil action "logout" di dalam module "auth"
+            store.dispatch('auth/logout')
+                .then(() => {
+
+                    //jika berhasil, akan di arahkan ke route login
+                    router.push({
+                        name: 'login'
+                    })
+
+                    toast.success("Logout Berhasil!")
+
+                })
+
+        }
+
+        //return a state and function
+        return {
+            logout
+        }
+
+    }
+}
+</script>
+
+<style></style>
+
+<style></style>

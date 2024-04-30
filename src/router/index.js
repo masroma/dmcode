@@ -1,6 +1,6 @@
 //import vue router
 import { createRouter, createWebHistory } from 'vue-router'
-
+import store from '../store'
 //define a routes
 const routes = [
     {
@@ -69,7 +69,11 @@ const routes = [
     {
         path: '/dashboard',
         name: 'dashboard',
-        component: () => import( /* webpackChunkName: "login" */ '../views/Dashboard.vue')
+        component: () => import( /* webpackChunkName: "login" */ '../views/Dashboard.vue'),
+        meta: {
+            //chek is loggedIn
+            requiresAuth: true
+        }
     },
     {
         path: '/kursus',
@@ -127,5 +131,20 @@ const router = createRouter({
     history: createWebHistory(),
     routes // <-- routes,
 })
+
+//define route for handle authentication
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        //cek nilai dari getters isLoggedIn di module auth
+        if (store.getters['auth/isLoggedIn']) {
+            next()
+            return
+        }
+        next('/login')
+    } else {
+        next()
+    }
+})
+
 
 export default router
