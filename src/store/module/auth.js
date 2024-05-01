@@ -308,7 +308,64 @@ const auth = {
 
             })
 
-        }
+        },
+
+        resetPassword({ commit }, user) {
+
+
+            //define callback promise
+            return new Promise((resolve, reject) => {
+
+                Api.post('/link-reset-password', {
+                    email: user.email,
+
+                })
+
+                    .then(response => {
+
+                        resolve(response)
+
+                    }).catch(error => {
+                        //reject ke component dengan hasil response
+                        reject(error.response.data)
+
+                    })
+
+            })
+
+        },
+
+        prosesresetpasword({ commit }, user) {
+
+            //define callback promise
+            return new Promise((resolve, reject) => {
+
+                Api.post('/resetpassword', {
+
+                    token: user.token,
+                    email: user.email,
+                    password: user.password,
+                    password_confirmation: user.password_confirmation
+
+                })
+
+                    .then(response => {
+
+                        resolve(response)
+
+                    }).catch(error => {
+
+                        //jika gagal, remove localStorage dengan key token
+                        localStorage.removeItem('token')
+
+                        //reject ke component dengan hasil response
+                        reject(error.response.data)
+
+                    })
+
+            })
+
+        },
 
     },
 

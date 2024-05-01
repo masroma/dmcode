@@ -12,48 +12,57 @@
 
                 </div>
 
+
+
                 <form @submit.prevent="login" class="my-5 flex flex-col gap-y-5">
                     <div class="flex flex-col gap-y-2">
-                        <p class="text-cyan-600">
+                        <p
+                            :class="validation.error && validation.error.email && validation.error.email.length > 0 ? 'text-red-500' : 'text-cyan-600'">
                             Email
                         </p>
-                        <div class="flex border-2 border-cyan-600 rounded-lg">
+
+                        <div
+                            :class="['flex', 'border-2', { 'border-red-500': validation.error && validation.error.email[0] }, 'border-cyan-600', 'rounded-lg']">
                             <input v-model="user.email" type="text"
                                 class="flex-1 py-3 px-3 rounded-lg focus:outline-none" placeholder="email">
                             <div class="p-3 flex-items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#00a3af"
+                                    <path :fill="validation.error && validation.error.email[0] ? '#FF3131' : '#00a3af'"
                                         d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z" />
                                 </svg>
                             </div>
                         </div>
-                        <p v-if="validation.error && validation.error.email" class="text-[11px] text-red-500 text-sm">
+                        <p v-if="validation.error && validation.error.email[0]"
+                            class="text-[11px] text-red-500 text-sm">
                             {{ validation.error.email[0] }}</p>
                     </div>
                     <div class="flex flex-col gap-y-2">
-                        <p class="text-cyan-600">
+                        <p :class="validation.error && validation.error.password[0] ? 'text-red-500' : 'text-cyan-600'">
                             Password
                         </p>
-                        <div class="flex  border-2 border-cyan-600 rounded-lg">
-                            <input v-model="user.password" :type="showPassword ? 'text' : 'password'" \
+                        <div
+                            :class="['flex', 'border-2', { 'border-red-500': validation.error && validation.error.password && validation.error.password.length > 0 }, 'border-cyan-600', 'rounded-lg']">
+                            <input v-model="user.password" :type="showPassword ? 'text' : 'password'"
                                 class="flex-1 focus:outline-none py-3 px-3 rounded-lg" placeholder="password">
                             <span class="p-3 flex-items-center" @click="togglePasswordVisibility" v-if="!showPassword">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#00a3af"
+                                    <path
+                                        :fill="validation.error && validation.error.password[0] ? '#FF3131' : '#00a3af'"
                                         d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
                                 </svg>
 
                             </span>
                             <span class="p-3 flex-items-center" @click="togglePasswordVisibility" v-else>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#00a3af"
+                                    <path
+                                        :fill="validation.error && validation.error.password[0] ? '#FF3131' : '#00a3af'"
                                         d="M14.33 7.17A15.642 15.642 0 0 0 12 7c-4.97 0-9 2.239-9 5c0 1.44 1.096 2.738 2.85 3.65l2.362-2.362a4 4 0 0 1 5.076-5.076zm-3.1 8.756a4 4 0 0 0 4.695-4.695l2.648-2.647C20.078 9.478 21 10.68 21 12c0 2.761-4.03 5-9 5c-.598 0-1.183-.032-1.749-.094zm6.563-10.719a1 1 0 1 1 1.414 1.414L6.48 19.35a1 1 0 1 1-1.414-1.414z" />
                                 </svg>
                             </span>
 
                         </div>
-                        <p v-if="validation.error && validation.error.password"
+                        <p v-if="validation.error && validation.error.password[0]"
                             class="text-[11px] text-red-500 text-sm">
                             {{ validation.error.password[0] }}</p>
                     </div>

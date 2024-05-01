@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center gap-x-2">
-        <img src="https://via.placeholder.com/50x50" class="h-12 w-12 rounded-full">
+        <img :src="user.avatar" class="h-12 w-12 rounded-full">
         <div class="flex flex-col ">
 
             <h2 class="text-md font-bold text-cyan-600 capitalize">{{ user.name }}</h2>
