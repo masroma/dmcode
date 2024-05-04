@@ -179,8 +179,11 @@ export default {
                     //assign validaation message
                     loading.value = false;
                     validation.value = error
-                    // console.log("ero",error.message)
+                    // console.log("ero", validation.value.error)
 
+                    if (validation.value.error) {
+                        toast.error(`${validation.value.error}`)
+                    }
                     if (validation.value.message) {
                         toast.error(`${validation.value.message}`)
                     }
